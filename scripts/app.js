@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
                 }
             }
         })
-        .when('threads/:threadId', {
+        .when('/threads/:threadId', {
             templateUrl: 'scripts/thread/thread.html',
             controller: 'threadCtrl',
             resolve: {
@@ -27,8 +27,5 @@ app.config(function($routeProvider) {
                 }
             }
         })
-        .otherwise('/', {
-            templateUrl: 'scripts/threads/threads.html',
-
-        })
+        .otherwise('/threads')
 })
