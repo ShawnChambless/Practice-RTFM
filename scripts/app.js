@@ -11,7 +11,7 @@ app.config(function($routeProvider) {
             controller: 'threadsCtrl',
             resolve: {
                 threadsRef: function(threadsService) {
-                    threadsService.getThreads();
+                    return threadsService.getThreads();
                 }
             }
         })
@@ -19,16 +19,16 @@ app.config(function($routeProvider) {
             templateUrl: 'scripts/thread/thread.html',
             controller: 'threadCtrl',
             resolve: {
-                threadRef: function(threadService, $route) {
-                    return threadService.getThread($route.current.params.threadId);
+                threadRef: function(threadsService, $route) {
+                    return threadsService.getThread($route.current.params.threadId);
                 },
-                commentsRef: function(threadService, $route) {
-                    return threadService.getComments($route.current.params.threadId);
+                commentsRef: function (threadsService, $route) {
+                    return threadsService.getComments($route.current.params.threadId);
                 }
             }
         })
         .otherwise('/', {
             templateUrl: 'scripts/threads/threads.html',
-            controller: 'threadsCtrl'
+
         })
 })
