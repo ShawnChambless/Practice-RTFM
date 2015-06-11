@@ -11,12 +11,24 @@ app.config(function($routeProvider) {
             controller: 'threadsCtrl',
             resolve: {
                 threadsRef: function(threadsService) {
-                    threadService.getThreads();
+                    threadsService.getThreads();
+                }
+            }
+        })
+        .when('threads/:threadId', {
+            templateUrl: 'scripts/thread/thread.html',
+            controller: 'threadCtrl',
+            resolve: {
+                threadRef: function(threadService, $route) {
+                    return threadService.getThread($route.current.params.threadId);
+                },
+                commentsRef: function(threadService, $route) {
+                    return threadService.getComments($route.current.params.threadId);
                 }
             }
         })
         .otherwise('/', {
-            templateUrl: 'scripts/home/home.html',
-            controller: 'mainCtrl'
+            templateUrl: 'scripts/threads/threads.html',
+            controller: 'threadsCtrl'
         })
 })
