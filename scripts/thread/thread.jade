@@ -1,10 +1,11 @@
 div
-    h1 <em>{{thread.username}}:</em> {{thread.title}}
+    a(href='/#/threads')
+        h1 {{thread.username}}: <em>{{thread.title}}</em>
     form(name='newCommentForm')
-        input(type='text' ng-model='newCommentText' placeholder='Write a comment...')
-        input(type='text' ng-model='username' placeholder='Username...')
+        input(type='text' ng-model='username' placeholder='Username...' required)
+        input(type='text' ng-model='newCommentText' placeholder='Write a comment...' required)
         button(ng-disabled='newCommentForm.$invalid' ng-click='createComment(username, newCommentText)') Add Comment
-        ul
-            li(ng-repeat='comment in comments') {{comment.username}}: {{comment.text}}
-            
+    ul
+        li(ng-repeat='comment in comments') {{comment.username}}: {{comment.text}}
         
+    
