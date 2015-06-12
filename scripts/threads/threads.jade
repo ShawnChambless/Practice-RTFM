@@ -18,7 +18,7 @@ div
             input(type='email' ng-model='user.email' placeholder='Email...' required)
             input(type='password' ng-model='user.password' placeholder='Password...' required)
             button(ng-disabled='loginForm.$invalid' ng-click='login(user)') Login
-    form(ng-show='loginBtnToggle' class='register' name='registerForm' ng-submit='register()' novalidate)
+    form(ng-show='loginBtnToggle' class='register' name='registerForm' ng-submit='register(user)' novalidate)
         .registerBtn(ng-click='toggleRegisterBtn()') Log In
         header Register 
         .inputs

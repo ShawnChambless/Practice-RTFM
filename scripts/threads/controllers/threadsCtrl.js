@@ -18,15 +18,12 @@ app .controller('threadsCtrl', function ($scope, threadsRef, $firebaseArray, $fi
         if(authData) {
             var userRef = new Firebase(root + '/users' + authData.uid),
                 user = $firebaseObject(userRef);
+                $scope.registerBtnToggle = false;
 
             user.$loaded().then(function(user) {
                 user.login = new Date().toString();
                 user.$save();
                 user.$bindTo($scope, 'user');
-
-                if(user.birthday) {
-                    $scope.birthday = new Date(user.birthday.toString());
-                }
             })
         }
     });
@@ -47,10 +44,6 @@ app .controller('threadsCtrl', function ($scope, threadsRef, $firebaseArray, $fi
         }, function(error) {
             alert(error);
         });
-    };
-
-    $scope.addUser = function(user) {
-        users.$add(user);
     };
 
     $scope.threads = $firebaseArray(threadsRef);

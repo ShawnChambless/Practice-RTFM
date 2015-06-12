@@ -19,7 +19,7 @@
       <button ng-disabled="loginForm.$invalid" ng-click="login(user)">Login</button>
     </div>
   </form>
-  <form ng-show="loginBtnToggle" name="registerForm" ng-submit="register()" novalidate="novalidate" class="register">
+  <form ng-show="loginBtnToggle" name="registerForm" ng-submit="register(user)" novalidate="novalidate" class="register">
     <div ng-click="toggleRegisterBtn()" class="registerBtn">Log In</div>
     <header>Register </header>
     <div class="inputs">
