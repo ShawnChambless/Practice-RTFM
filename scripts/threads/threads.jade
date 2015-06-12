@@ -1,7 +1,7 @@
 div
     a(href='/#/threads')
         h1 Firebase Forum! 
-    form(name='newThreadForm' ng-submit='createThread()')
+    form(class='post' name='newThreadForm' ng-submit='createThread()')
         input(type='text' ng-model='username' placeholder='Username...' required)
         input(type='text' ng-model='newThreadTitle' placeholder='New thread title...' required)
         button(ng-disabled='newThreadForm.$invalid' ng-click='createThread()') Add Thread
@@ -9,4 +9,19 @@ div
         a(ng-repeat='thread in threads' ng-href='#/threads/{{thread.$id}}')
             li
                 span {{thread.username}}: 
-                span  <em>{{thread.title}}</em>
+                span  <em>{{thread.title}}</em>              
+.modal
+    form(ng-show='registerBtnToggle' class='login' name='loginForm' ng-submit='login(user)' novalidate)
+        .registerBtn(ng-click='toggleRegisterBtn()') Register
+        header Log In
+        .inputs
+            input(type='email' ng-model='user.email' placeholder='Email...' required)
+            input(type='password' ng-model='user.password' placeholder='Password...' required)
+            button(ng-disabled='loginForm.$invalid' ng-click='login(user)') Login
+    form(ng-show='loginBtnToggle' class='register' name='registerForm' ng-submit='register()' novalidate)
+        .registerBtn(ng-click='toggleRegisterBtn()') Log In
+        header Register 
+        .inputs
+            input(type='email' ng-model='user.email' placeholder='Email...' required)
+            input(type='password' ng-model='user.password' placeholder='Password...' required)
+            button(ng-disabled='registerForm.$invalid' ng-submit='register(user)') Register

@@ -20,10 +20,11 @@ ng-view
     margin: 0 30px
     display: flex
     justify-content: center
-form
+.post
     display: flex
     justify-content: center
     align-items: center
+
 input
     height: 100%
     font-size: 1.2em
@@ -56,3 +57,40 @@ ul
 h1
     text-align: center
     font-weight: 300
+.modal
+    position: fixed
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 10%
+    left: 10%
+    height: 80%
+    width: 80%
+.login, .register
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    background: #fff
+    border-radius: 10px
+    box-shadow: 0px 0px 10px #333
+    header
+        font-size: 3em
+        margin-bottom: 10%
+        color: #6A7F7F
+    .inputs
+        display: flex
+        align-items: center
+        margin-bottom: 10%
+        input
+            font-size: 1.2em
+            height: 1.2em
+            width: 10em
+    button
+        width: 6em
+    .registerBtn
+        top: 0px
+        right: 0px
+        cursor: pointer

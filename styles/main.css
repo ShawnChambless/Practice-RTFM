@@ -1,7 +1,8 @@
 html, body {
   height: 100%;
   width: 100%;
-  margin: 0; }
+  margin: 0;
+}
 
 body {
   font-family: "Helvetica Nue", Helvetica, Arial, sans-serif;
@@ -9,57 +10,161 @@ body {
   background: #BFE6E6;
   color: #333;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+}
 
 a {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+}
 
 h1 {
   font-size: 4em;
-  color: #666; }
+  color: #666;
+}
 
 ng-view {
   height: 100%;
   margin: 0 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center; }
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
-form {
+.post {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 input {
   height: 100%;
   font-size: 1.2em;
   margin: 10px;
   border-radius: 4px;
-  border: 1px inset rgba(153, 153, 153, 0.7); }
-  input:focus {
-    outline: none; }
+  border: 1px inset rgba(153, 153, 153, 0.7);
+}
+input:focus {
+  outline: none;
+}
 
 button {
   border: none;
+  background: -webkit-linear-gradient(#D5FFFF, #A8C9C9);
   background: linear-gradient(#D5FFFF, #A8C9C9);
   height: 2.5em;
   border-radius: 5px;
-  cursor: pointer; }
-  button:disabled {
-    background: linear-gradient(#A8C9C9, #97B5B5); }
+  cursor: pointer;
+}
+button:disabled {
+  background: -webkit-linear-gradient(#A8C9C9, #97B5B5);
+  background: linear-gradient(#A8C9C9, #97B5B5);
+}
 
 ul {
   list-style-type: none;
   height: 100%;
-  font-size: 1.5em; }
-  ul li {
-    margin-top: 10px;
-    background: rgba(106, 127, 127, 0.8);
-    padding: 1em;
-    width: 70vw; }
-    ul li a {
-      text-decoration: underline; }
+  font-size: 1.5em;
+}
+ul li {
+  margin-top: 10px;
+  background: rgba(106, 127, 127, 0.8);
+  padding: 1em;
+  width: 70vw;
+}
+ul li a {
+  text-decoration: underline;
+}
 
 h1 {
   text-align: center;
-  font-weight: 300; }
+  font-weight: 300;
+}
+
+.modal {
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+}
+
+.login, .register {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #333;
+}
+.login header, .register header {
+  font-size: 3em;
+  margin-bottom: 10%;
+  color: #6A7F7F;
+}
+.login .inputs, .register .inputs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10%;
+}
+.login .inputs input, .register .inputs input {
+  font-size: 1.2em;
+  height: 1.2em;
+  width: 10em;
+}
+.login button, .register button {
+  width: 6em;
+}
+.login .registerBtn, .register .registerBtn {
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+}
