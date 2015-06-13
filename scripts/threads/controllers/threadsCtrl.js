@@ -18,7 +18,7 @@ app .controller('threadsCtrl', function ($scope, threadsRef, $firebaseArray, $fi
         if(authData) {
             var userRef = new Firebase(root + '/users' + authData.uid),
                 user = $firebaseObject(userRef);
-                $scope.registerBtnToggle = false;
+                $('.modal').css('display', 'none');
 
             user.$loaded().then(function(user) {
                 user.login = new Date().toString();

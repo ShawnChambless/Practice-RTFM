@@ -1,6 +1,8 @@
 div
     a(href='/#/threads')
         h1 Firebase Forum! 
+        span.loggedInAs Logged in as: {{authData.uid}}
+        button.logoutBtn(ng-click='authObj.$unauth()') Log Out
     form(class='post' name='newThreadForm' ng-submit='createThread()')
         input(type='text' ng-model='username' placeholder='Username...' required)
         input(type='text' ng-model='newThreadTitle' placeholder='New thread title...' required)
